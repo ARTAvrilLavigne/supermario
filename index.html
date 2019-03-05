@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>SuperMario</title>
+	<style>
+	body {
+		font-family: monospace;
+		background-color: #eee;
+		text-align:center;
+	}
+	#canvas:-webkit-full-screen {
+		height: 100vmin !important;
+		width: 106.67vmin !important;
+	}
+	#canvas {
+		margin-bottom: 20px;
+	}
+	#rangeSpeed {
+		width: 400px;
+	}
+	table {
+		border-collapse: collapse;
+	}
+	td {
+		border: solid #999 1px;
+		padding: 2px 20px;
+	}
+	</style>
+</head>
+<body>
+	<!-- <h1>超级马里奥</h1> -->
+	<canvas id="canvas" width="256" height="240"></canvas>
+	<div>
+		游戏按键： ASDW / IO / Enter   &nbsp;&nbsp;&nbsp;
+		<input id="chkSwapAB" type="checkbox">
+		<label for="chkSwapAB">交换IO键</label>
+	</div>
+	<div>
+		屏幕大小：
+		<button id="btnSize1X">1x</button>
+		<button id="btnSize2X">2x</button>
+		<button id="btnSizeScreen" disabled>Full Screen</button>
+		<input id="chkPxStyle" type="checkbox" disabled>
+		<label for="chkPxStyle">Pixelated (webkit only)</label>
+	</div>
+	<div>
+		加速：<input id="rangeSpeed" type="range" value="0">
+		<span id="labelSpeed">1</span>x
+	</div>
+	<div>
+		<input id="chkMute" type="checkbox">
+		<label for="chkMute" disabled>游戏静音</label>&nbsp;&nbsp;&nbsp;&nbsp;
+		<button id="btnBenchmark">测试游戏逻辑的极限FPS</button>
+	</div>
+	<div>
+		
+	</div>
+
+	<p>性能参数实时统计:</p>
+	<table align="center">
+		<tr>
+			<td></td>
+			<td>Now (ms)</td>
+			<td>Avg (ms)</td>
+		</tr>
+		<tr>
+			<td>FPS</td>
+			<td id="itemFPSNow"></td>
+			<td id="itemFPSAvg"></td>
+		</tr>
+		<tr>
+			<td>Game Logic</td>
+			<td id="itemGameNow"></td>
+			<td id="itemGameAvg"></td>
+		</tr>
+		<tr>
+			<td>APU</td>
+			<td id="itemAPUNow"></td>
+			<td id="itemAPUAvg"></td>
+		</tr>
+		<tr>
+			<td>PPU</td>
+			<td id="itemPPUNow"></td>
+			<td id="itemPPUAvg"></td>
+		</tr>
+		<tr>
+			<td>Render</td>
+			<td id="itemRenderNow"></td>
+			<td id="itemRenderAvg"></td>
+		</tr>
+	</table>
+	
+	<div>
+		<h1>具体游戏按键设置：</h1>
+		<p>
+			游戏选择：空格<br>
+			开始：Enter<br>
+			左移动：A<br>
+			右移动：D<br>
+			下蹲：S<br>
+			上跳跃：I<br>
+			发射子弹：O<br>
+		</p>
+	</div>
+
+	<script type="text/javascript" src="./js/smb-min.js"></script>
+	<script type="text/javascript" src="./js/ui.js"></script>
+</body>
+</html>
